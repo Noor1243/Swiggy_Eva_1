@@ -18,6 +18,7 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
     }
 
     buildTypes {
@@ -71,6 +72,16 @@ dependencies {
         implementation("androidx.core:core-ktx:1.10.1")
         implementation("com.google.android.material:material:1.9.0")
         // Add any other dependencies you might need here
+        implementation ("androidx.appcompat:appcompat:1.5.1")
+        implementation ("com.google.android.material:material:1.7.0")
+        implementation ("androidx.recyclerview:recyclerview:1.2.1")
+        implementation ("androidx.viewpager2:viewpager2:1.0.0")
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("com.google.android.material:material:1.9.0")
+    implementation("androidx.recyclerview:recyclerview:1.2.1")
+    implementation("androidx.viewpager2:viewpager2:1.0.0")
+
+
 
 
 }

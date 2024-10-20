@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Swiggy (Home) Tab -->
+    <item
+        android:id="@+id/navigation_swiggy"
+        android:icon="@drawable/icon_swiggy"
+        android:title="Swiggy" />
+
+    <!-- Food Tab (Unclickable for now) -->
+    <item
+        android:id="@+id/navigation_food"
+        android:icon="@drawable/icon_food"
+        android:title="Food"
+        android:enabled="false" />
+
+    <!-- Instamart Tab -->
+    <item
+        android:id="@+id/navigation_instamart"
+        android:icon="@drawable/icon_instamart"
+        android:title="Instamart" />
+
+    <!-- Dineout Tab (Unclickable for now) -->
+    <item
+        android:id="@+id/navigation_dineout"
+        android:icon="@drawable/icon_dineout"
+        android:title="Dineout"
+        android:enabled="false" />
+
+    <!-- Genie Tab (Unclickable for now) -->
+    <item
+        android:id="@+id/navigation_genie"
+        android:icon="@drawable/icon_genie"
+        android:title="Genie"
+        android:enabled="false" />
+
+</menu>

@@ -8,8 +8,6 @@
     android:padding="16dp">
 
     <!-- Swiggy Logo -->
-
-    <!-- Welcome Message -->
     <ImageView
         android:id="@+id/logoImageView"
         android:layout_width="wrap_content"
@@ -19,6 +17,7 @@
         android:contentDescription="Swiggy Logo"
         android:src="@drawable/logo" />
 
+    <!-- Welcome Message -->
     <TextView
         android:id="@+id/welcomeMessage"
         android:layout_width="wrap_content"
@@ -35,12 +34,36 @@
     <TextView
         android:id="@+id/designedBy"
         android:layout_width="wrap_content"
-        android:layout_height="118dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="0dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="40dp"
         android:gravity="center"
         android:text="Designed by Amna Noor"
         android:textColor="#800888"
         android:textSize="16sp" />
+
+    <!-- Login Button -->
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textSize="18sp"
+        android:padding="12dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/orange"
+        android:textColor="@color/white" />
+
+    <!-- Signup Button -->
+    <Button
+        android:id="@+id/btnSignup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:textSize="18sp"
+        android:padding="12dp"
+        android:backgroundTint="@color/orange"
+        android:textColor="@color/white" />
+
 </LinearLayout>

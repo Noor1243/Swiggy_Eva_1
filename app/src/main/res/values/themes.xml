@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+
+        <!-- Base application theme -->
+        <style name="Theme.MyApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+            <!-- Primary branding colors -->
+            <item name="colorPrimary">@color/light_gray</item>
+            <item name="colorPrimaryVariant">@color/grey</item>
+            <item name="colorOnPrimary">@color/white</item>
+
+            <!-- Set Default Font Family -->
+            <item name="android:fontFamily">@font/swiggy_font_light</item> <!-- Change this to your font name -->
+        </style>
+
+    
+
     <style name="Theme.Swiggy_App_Bcsf21m004" parent="android:Theme.Material.Light.NoActionBar" />
 </resources>

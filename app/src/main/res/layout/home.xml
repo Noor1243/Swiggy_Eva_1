@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:background="#ffffff"
+    tools:context=".HomeActivity">
 
-    <!-- Header section -->
-    <RelativeLayout
+    <!-- Header Section with Location and Profile Image -->
+    <LinearLayout
+        android:id="@+id/rl_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp">
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="#FF5722">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -17,151 +23,252 @@
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/icon_location" />
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/icon_location"
+
+                    android:layout_marginEnd="8dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Home"
-                    android:textStyle="bold"
+                    android:text="Your Location"
                     android:textSize="18sp"
-                    android:textColor="#000" />
+                    android:textStyle="bold"
+                    android:textColor="@android:color/white" />
             </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="85/4 D Samanabad Lahore, Pakistan"
+                android:text="1/422E, Kulattur, Chennai, Tamil Nadu"
                 android:textSize="14sp"
-                android:textColor="#888" />
+                android:textColor="@android:color/white" />
         </LinearLayout>
 
         <ImageView
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:src="@drawable/profile_dp_colored"
-            android:layout_alignParentEnd="true" />
-    </RelativeLayout>
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="end"
+            android:src="@drawable/img_brand"
+            android:layout_marginStart="4in"
 
-    <!-- Search bar section -->
-    <RelativeLayout
+            android:scaleType="centerCrop" />
+    </LinearLayout>
+
+    <!-- Search Bar Section -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_searchbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:background="#f1f1f4">
+        android:layout_below="@id/rl_header"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="12dp"
+        android:elevation="4dp"
+        app:cardBackgroundColor="#F5F5F5">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Search for "
-            android:textSize="16sp"
-            android:textColor="#888" />
+            android:padding="12dp">
 
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/icon_search"
-            android:layout_alignParentEnd="true" />
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/tv_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Search for products, restaurants..."
+                android:textSize="16sp"
+                android:textColor="#757575"
+                android:layout_alignParentStart="true" />
 
-    <!-- Body content section -->
+            <ImageView
+                android:id="@+id/iv_mic"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/icon_mic"/>
+
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Body Scroll Section with Categories and Promotions -->
     <ScrollView
+        android:id="@+id/sv_home"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cv_searchbar">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Image Grid -->
+            <!-- Category Section -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:weightSum="1"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:padding="16dp"
+                android:weightSum="4">
 
                 <LinearLayout
-                    android:layout_weight="0.25"
+                    android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="8dp">
+
                     <ImageView
-                        android:layout_width="wrap_content"
+                        android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/homeimage1" />
+                        android:src="@drawable/homeimage1"
+
+                        android:padding="16dp" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Food"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textColor="#000"
+                        android:textSize="16sp" />
                 </LinearLayout>
 
-                <!-- Repeat similar blocks for other categories -->
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="8dp">
 
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/homeimage2"
+
+                        android:padding="16dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Instamart"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textColor="#000"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/homeimage3"
+
+                        android:padding="16dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dineout"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textColor="#000"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/homeimage4"
+
+                        android:padding="16dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Genie"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textColor="#000"
+                        android:textSize="16sp" />
+                </LinearLayout>
             </LinearLayout>
 
-            <!-- ViewPager Section -->
+            <!-- ViewPager2 Section for Promotions -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
-                android:orientation="vertical">
+                android:layout_marginTop="20dp">
 
-                <!-- Title or Heading for the ViewPager Section -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:fontFamily="sans-serif-medium"
-                    android:paddingBottom="10dp"
-                    android:text="Delicious Food Picks"
-                    android:textColor="@android:color/black"
-                    android:textSize="18sp" />
-
-                <!-- ViewPager to display food-related images -->
-
-                <ImageView
-                    android:id="@+id/imageView_food"
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/viewpager2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:contentDescription="Food Image"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/homead2" />
-
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp" />
             </LinearLayout>
 
-
-            <!-- Footer section -->
+            <!-- Advertisement Banners -->
             <LinearLayout
-                android:padding="30dp"
-                android:background="#f1f1f4"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:background="#ffffff">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <ImageView
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Live it up!"
-                    android:textSize="40sp"
-                    android:textColor="#888"
-                    android:textStyle="bold" />
+                    android:src="@drawable/homead1"
+                    android:layout_marginTop="1dp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <ImageView
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Crafted with ❤️ by Amna Noor"
-                    android:textSize="16sp"
-                    android:textColor="#888" />
+                    android:src="@drawable/homead2"
+                    android:layout_marginTop="1dp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/homead3"
+                    android:layout_marginTop="10dp" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
 
-</LinearLayout>
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_navigation_menu"
+        android:background="#FF5722"
+        app:itemIconTint="@android:color/white"
+        app:itemTextColor="@android:color/white" />
+
+</RelativeLayout>
